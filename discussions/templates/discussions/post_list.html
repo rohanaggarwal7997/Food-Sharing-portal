@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8" >
+
+
+</head>
+
+
+<body>
+
+
+            <div class="container-fluid" style="margin-top: 4%;">
+                    <div class="row" >
+                        <div >
+                            <div class="container ">
+                                <div >
+
+
+                                    <form  method="GET" action="" >
+                                        <input type="text" name="q" class="form-control" placeholder="Search post..." />
+                                        <button  type="submit" name="action">Search
+                                     send </button>
+
+                                     </form>
+                                    <ul><a href="/discussions/create" >Create Post</a> </ul>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div  >
+                            {% for obj in post %}
+                                <a href='{{ obj.get_absolute_url }}'>
+                                    <h5 class="post-title">
+                                        {{ obj.title }}</a>
+                                    </h5>
+                                        {{ obj.content }}
+                                <br>
+                                Posted by <b>{{ obj.writer }}</b> on {{ obj.timestamp }} <br>
+                                 Going At  {{ obj.goingat }}<br>
+                                 Coming Back {{ obj.comingback }}<br>
+
+
+                         {% endfor %}
+                        </div>
+                    </div>
+             </div>
+
+    </body>
+</html>
